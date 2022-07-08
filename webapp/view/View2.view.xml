@@ -1,0 +1,111 @@
+<mvc:View xmlns:calendar="sap.ui.unified.calendar"
+    xmlns:cards="sap.f.cards" controllerName="zz1editcartoes.controller.View2" height="100%"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:vm="sap.ui.comp.variants"
+    xmlns:form="sap.ui.layout.form">
+    <App id="app">
+        <pages>
+            <Page title="{i18n>titleEdit}" id="page" showHeader="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+
+                <content>
+                    <form:Form id="_IDGenForm1" width="100%" editable="true" visible="true">
+                        <form:title/>
+                        <form:formContainers>
+                            <form:FormContainer id="_IDGenFormContainer1" visible="true">
+                                <form:formElements>
+                                    <form:FormElement id="_IDGenFormElement4" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel4" text="{i18n>lblProduto}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" width="auto" id="tProduto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement id="_IDGenFormElement2" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel2" text="{i18n>lblAUFNR}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" id="tAUFNR" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement id="_IDGenFormElement1" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel1" text="{i18n>lblWERKS}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" id="tWERKS" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement id="_IDGenFormElement8" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel31" text="{i18n>lblQtdCartao}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" width="auto" id="tQtd" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement id="_IDGenFormElement9" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel32" text="{i18n>lblAjustar}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="qtdPara" type="Number"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                                <form:title/>
+                            </form:FormContainer>
+                            <form:FormContainer id="_IDGenFormContainer2" visible="true">
+                                <form:formElements>
+                                    <form:FormElement id="_IDGenFormElement3" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel3" text="{i18n>lblReserva}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" width="auto" id="tReserva" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement id="_IDGenFormElement5" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel5" text="{i18n>lblRspos}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" width="auto" id="tRspos" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement id="_IDGenFormElement6" visible="true">
+                                        <form:label>
+                                            <Label id="_IDGenLabel6" text="{i18n>lblMblnr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="" width="auto" id="tMblnr" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                                <form:title/>
+                            </form:FormContainer>
+                        </form:formContainers>
+                        <form:layout>
+                            <form:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="4" labelSpanS="12"/>
+                        </form:layout>
+                    </form:Form>
+                    <Label id="_IDGenLabel50" text="{i18n>lblMotivo}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                    <TextArea value="" id="tMotivo" width="100%"  rows="8"/>
+                </content>
+                <footer>
+                    <OverflowToolbar id="otbFooter">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer3"/>
+                        <Button id="Save" text="{i18n>btnSalvar}" press="onUpdate" visible="true" type="Accept"/>
+                        <Button id="CancelView2" text="{i18n>btnCancel}" press="_onPageNavButtonPress" visible="true"/>
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

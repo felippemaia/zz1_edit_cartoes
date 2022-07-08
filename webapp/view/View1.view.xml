@@ -1,0 +1,124 @@
+<mvc:View controllerName="zz1editcartoes.controller.View1" height="100%"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:vm="sap.ui.comp.variants">
+    <App id="app">
+        <f:DynamicPage id="dynamicPageId" headerExpanded="true" showFooter="true">
+            <!-- DynamicPage Title -->
+            <f:title>
+            </f:title>
+            <!-- DynamicPage Header -->
+            <f:header>
+                <f:DynamicPageHeader id="_IDGenDynamicPageHeader1" pinnable="true">
+                    <f:content>
+                        <fb:FilterBar id="filterbar" reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true" filterBarExpanded="true">
+                            <fb:filterItems>
+                                <fb:FilterItem id="_IDGenFilterItem1" name="A" label="{i18n>lblAUFNR}">
+                                    <fb:control>
+                                        <MultiInput xmlns="sap.m" id="sAUFNR" required="false" showValueHelp="true" valueHelpRequest="onAufnrValueHelp" />
+                                    </fb:control>
+                                </fb:FilterItem>
+                                <fb:FilterItem id="_IDGenFilterItem2" name="B" label="{i18n>lblMATNR}">
+                                    <fb:control>
+                                        <MultiInput xmlns="sap.m" id="sMATNR" required="false" showValueHelp="true" valueHelpRequest="onMatnrValueHelp" />
+                                    </fb:control>
+                                </fb:FilterItem>
+                                <fb:FilterItem id="_IDGenFilterItem4" name="D" label="{i18n>lblWERKS}">
+                                    <fb:control>
+                                        <Input xmlns="sap.m" id="sWERKS" showValueHelp="true" valueHelpRequest="onWerksValueHelp"/>
+                                    </fb:control>
+                                </fb:FilterItem>
+                                <fb:FilterItem id="_IDGenFilterItem6" name="F" label="{i18n>lblTPKANBAN}">
+                                    <fb:control>
+                                        <MultiInput xmlns="sap.m" id="sTPKANBAN"  showValueHelp="true" valueHelpRequest="onKanbanValueHelp"/>
+                                    </fb:control>
+                                </fb:FilterItem>
+                                <fb:FilterItem id="_IDGenFilterItem9" name="I" label="{i18n>lblSTATUS}">
+                                    <fb:control>
+                                        <Select id="sStatus" >
+                                            <core:Item id="_IDGenItem1" key="01"  text="Criado" />
+                                            <core:Item id="_IDGenItem2" key="10" text="Solicitado pela produção"/>
+                                            <core:Item id="_IDGenItem3" key="20" text="Atendido pelo operador" />
+                                            <core:Item id="_IDGenItem4" key="30" text="Recebido na produção" />
+                                            <core:Item id="_IDGenItem5" key="90" text="Devolvido ao DEMAT" />
+                                          <!--  <core:Item id="_IDGenItem6" key="91" text="Disponibilizado ao estoque fabrica" />-->
+                                            <core:Item id="_IDGenItem7" key="99" text="Eliminado" />
+                                        </Select>
+                                    </fb:control>
+                                </fb:FilterItem>
+                                <fb:FilterItem id="_IDGenFilterItem8" name="H" label="{i18n>lblCartao}">
+                                    <fb:control>
+                                        <Input xmlns="sap.m" id="sKanban" required="false" showValueHelp="false" valueHelpRequest="onLgortValueHelp"/>
+                                    </fb:control>
+                                </fb:FilterItem>
+                            </fb:filterItems>
+                        </fb:FilterBar>
+                    </f:content>
+                </f:DynamicPageHeader>
+            </f:header>
+            <!-- DynamicPage Content -->
+            <f:content>
+                <Table id="idTable" inset="false" items="{/Zpp_xxxSet}" mode="MultiSelect" growing="true">
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar2">
+                            <Title id="_IDGenTitle1" text="Ordens" level="H2"/>
+                            <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+                            <Button id="_IDGenButton2" text="{i18n>btnEditar}" press="onEdit"/>
+                            <Button id="_IDGenButton3" text="{i18n>btnEliminar}" press="onDelete"/>
+                            <Button id="_IDGenButton6" tooltip="Settings" icon="sap-icon://action-settings" press="onPersoButtonPressed"/>
+                            <Button id="_IDGenButton5" tooltip="Export" icon="sap-icon://excel-attachment" press="onExport"/>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn3" minScreenWidth="Tablet" demandPopin="true" width="5%">
+                            <Text id="_IDGenText3" text="{i18n>lblKanban}"/>
+                        </Column>
+                        <Column id="_IDGenColumn9" minScreenWidth="Tablet" demandPopin="true" width="10%">
+                            <Text id="_IDGenText91" text="{i18n>lblTPKANBAN}"/>
+                        </Column>
+                        <Column id="_IDGenColumn8" minScreenWidth="Tablet" demandPopin="true"  width="10%">
+                            <Text id="_IDGenText13" text="{i18n>lblSTATUS}"/>
+                        </Column>
+                        <Column id="_IDGenColumn4" minScreenWidth="Tablet" demandPopin="true">
+                            <Text id="_IDGenText4" text="{i18n>lblMATNR}"/>
+                        </Column>
+                        <Column id="_IDGenColumn2" minScreenWidth="Tablet" demandPopin="true" width="10%">
+                            <Text id="_IDGenText2" text="{i18n>lblAUFNR}"/>
+                        </Column>
+                        <Column id="_IDGenColumn5" minScreenWidth="Tablet" demandPopin="true"  width="10%">
+                            <Text id="_IDGenText5" text="{i18n>lblQtd}"/>
+                        </Column>
+                        <Column id="_IDGenColumn6" minScreenWidth="Tablet" demandPopin="true" width="10%">
+                            <Text id="_IDGenText6" text="{i18n>lblLGORT}"/>
+                        </Column>
+                        <Column id="_IDGenColumn7" minScreenWidth="Tablet" demandPopin="true">
+                            <Text id="_IDGenText7" text="{i18n>lblArea}"/>
+                        </Column>
+                        <Column id="_IDGenColumn1" minScreenWidth="Tablet" demandPopin="true">
+                            <Text id="_IDGenText1" text="{i18n>lblContador}"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem1" vAlign="Middle">
+                            <cells>
+                                <Text id="_IDGenText16" text="{Kanban}"/>
+                                <Text id="_IDGenText8" text="{Tpkanban}"/>
+                                <Text id="_IDGenText9" text="{DescStatus}"/>
+                                <ObjectIdentifier  id="_IDGenObjectIdentifier1" title="{Matnr}" text="{Maktx}"/>
+                                <Text id="_IDGenText11" text="{Aufnr}"/>
+                                <ObjectIdentifier  id="_IDGenObjectIdentifier2" title="{Menge}" text="{Meins}"/>
+                                <Text id="_IDGenText17" text="{Lgort}"/>
+                                <Text id="_IDGenText14" text="{Vspvb}"/>
+                                <Text id="_IDGenText15" text="{Contador}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </f:content>
+        </f:DynamicPage>
+    </App>
+</mvc:View>
